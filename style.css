@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+.root {
+  visibility: hidden;
+  background: url('./assets/img/back_lg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  animation: fadein 2s;
+  height: 100vh;
+}
+.container {
+  height: calc(100% - 20px);
+}
+
+.container,
+.footer,
+.form-container {
+  display: flex;
+}
+
+.header,
+.main {
+  display: flex;
+  width: 50%;
+}
+.header,
+.footer,
+.form-container {
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form-container {
+  opacity: 0;
+  height: 100%;
+  animation-name: fadein;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.form {
+  width: 400px;
+  background: white;
+  border: 1px solid black;
+  padding: 20px 10px;
+}
+.login {
+  margin-bottom: 15px;
+}
+.login,
+.password {
+  text-align: right;
+}
+.text-form {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.footer {
+  height: 20px;
+}
+.footer p {
+  position: absolute;
+  right: 25%;
+  transform: translate(50%, 0);
+  margin: 0;
+  font-size: 12px;
+  color: white;
+}
+
+@media only screen and (max-device-width: 991px) {
+  .root {
+    background: url('./assets/img/back_tablet.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer p {
+    right: 50%;
+  }
+  .form {
+    width: 350px;
+  }
+  .password,
+  .login {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .header {
+    position: absolute;
+    top: 25%;
+    transform: translate(0, -50%);
+  }
+}
+@media only screen and (max-device-width: 479px) {
+  .root {
+    background: white;
+  }
+  .container {
+    height: 50%;
+    padding: 12px;
+    justify-content: start;
+  }
+  .header {
+    position: inherit;
+    margin-bottom: 12px;
+    transform: translate(0, 0);
+  }
+  .main {
+    width: 100%;
+  }
+  .form {
+    border: 0px;
+    width: 100%;
+    padding: 0;
+  }
+  .footer {
+    position: absolute;
+    border-top: 1px solid black;
+    bottom: 0;
+    width: 100%;
+  }
+  .footer p {
+    color: blue;
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
