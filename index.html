@@ -20,11 +20,13 @@
           <form class="form">
             <div class="login">
               <label class="text-form" for="login">Login</label>
-              <input type="text" id="login" name="login">
+              <input type="email" id="login" name="login" title="Введите e-mail" required>
             </div>
             <div class="password">
               <label class="text-form" for="password">Password</label>
-              <input type="text" id="password" name="login">
+              <input type="password" id="password" title="Введите пароль, не менее 8 символов" name="password"
+                pattern="^\w{8,}$" required>
+              <input style="display: none" type="submit" value="submit">
             </div>
           </form>
         </div>
