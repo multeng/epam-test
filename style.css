@@ -38,14 +38,16 @@
 }
 .form-container {
   opacity: 0;
-  animation-delay: 2s;
   height: 100%;
 }
 
 .fade-in {
-  animation-duration: 2s;
-  animation-name: fadein;
-  animation-fill-mode: forwards;
+  opacity: 1;
+  transition: opacity 2s;
+  -moz-transition: opacity 2s;
+  -ms-transition: opacity 2s;
+  -o-transition: opacity 2s;
+  -webkit-transition: opacity 2s;
 }
 
 .form {
@@ -142,10 +144,10 @@
 }
 
 @keyframes fadein {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
