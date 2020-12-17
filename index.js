@@ -9,8 +9,9 @@ window.onload = function () {
 };
 
 function fadeInRoot() {
-  root.addEventListener('transitionend', fadeInLoginForm());
   root.classList.add('fade-in');
+  root.addEventListener('transitionend', fadeInLoginForm);
+
 }
 
 function fadeInLoginForm() {
